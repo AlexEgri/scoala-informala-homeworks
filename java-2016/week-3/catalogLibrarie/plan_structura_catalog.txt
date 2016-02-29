@@ -1,0 +1,24 @@
+catalog biblioteca
+
+clasa carti
+
+obiect carte
+nume
+nrPagini
+
+caracteristici
+carte.roman
+mosteneste	nume
+mosteneste	nrPagini
+NEW	tip
+	
+carte.album
+mosteneste	nume
+mosteneste	nrPagini
+NEW	calitateHartie
+
+	
+comportament obiect carte
+se adauga 
+se scoate 
+se listeaza 
