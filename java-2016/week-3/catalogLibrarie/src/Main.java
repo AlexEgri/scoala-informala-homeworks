@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class carti;
+public class Main {
  /* userul va putea sa:
  						aleaga operatiunea ce o aplica pe carti (adauge, scoata, listeze)
 							daca e carte noua sa ii aleaga tipul
@@ -40,7 +40,7 @@ public void adaugaCarte(){
 	private int nrPaginiCarteNoua = in.nextInt();
 	System.out.println("Introduceti numele romanului");
 	private string numeCarteNoua = in.nextString ();
-}
+	}
 public void scoateCarte ();
 public void listeazaCarti ();
 
@@ -49,3 +49,4 @@ carti romane = new carti();
 
 
 carti albume = new carti();
+}
