@@ -1,6 +1,11 @@
 catalog biblioteca
 
 clasa carti
+alege ce vrei sa faci cu cartile
+	adauga carte
+	scoate carte
+	listeaza carti
+
 
 obiect carte
 nume
