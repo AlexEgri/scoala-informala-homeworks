@@ -27,7 +27,16 @@ public class Library {
 		System.out.println("For a novel press N");
 		System.out.println("For an art album  press A");
 		String bookChoice = input.nextLine();
-		if (bookChoice == "A"){
+		switch(bookChoice){
+			case "A":
+			System.out.println("album added");
+			return;
+		
+			case "N":
+			System.out.println("novel added");
+			return;
+		}
+		/* if (bookChoice == "A"){
 			//addAlbum();
 				System.out.println("album added!");
 				return;
@@ -36,7 +45,7 @@ public class Library {
 			//addNovel();
 				System.out.println("novel added!");
 			return;
-		}
+		} */
 		
 		case "2":
 		System.out.println("Removing book");
