@@ -18,7 +18,7 @@ public Library(){
 		String  choice = input.nextLine();
 		switch(choice){
 			case "1":
-			Book.addBook();
+			Book.addBook(); //apelez metoda din clasa Book prin care sa adaug album sau novel, in functie de decizia userului
 			break;
 	
 			case "2":
@@ -33,7 +33,7 @@ public Library(){
 			break;
 		
 			default: 
-			System.out.println("invalid choice");
+			System.out.println("invalid choice");//daca userul nu introduce un numar valid, se permite revenirea la meniul de inceput
 			break;
 		}
 		System.out.println("Continuati aplicatia ? yes/no");

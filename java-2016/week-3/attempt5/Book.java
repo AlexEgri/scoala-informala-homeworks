@@ -32,13 +32,13 @@ public Book(String bookName, int numberOfPages){
 	}
 
 	public String getBookName(){
-		System.out.println("asta e tuitlul ");
+		System.out.println("asta e tuitlul ");//sa pot testa daca merge, inca nu am apucat sa testez
 		return bookName;
 	}
 
 
 	public int getNumberOfPages(){
-		System.out.println("asta e numaru de pagini");
+		System.out.println("asta e numaru de pagini");//sa pot testa daca merge, inca nu am apucat sa testez
 		return pageNumbers;
 	}
 	
@@ -50,13 +50,13 @@ public Book(String bookName, int numberOfPages){
 			switch(bookTypeChosen){
 			case "novel":
 			Novel.addNovel();
-			//da un numar de inventar obiectului
+			//da un numar de inventar obiectului - nu face asa ceva deocsmdata
 			//adauga obiectul in array
 			
 			return;
 			case "album":
 			ArtAlbum.addAlbum();
-			//da un numar de inventar obiectului
+			//da un numar de inventar obiectului - nu face asa ceva deocsmdata
 			//adauga obiectul in array
 			return;
 			default:
