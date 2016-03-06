@@ -5,11 +5,14 @@ public class Novel extends Book{
 	private static String novelType;
 	static Scanner novelInput = new Scanner(System.in);
 	
-	static ArrayList<Novel> novelInventory = new ArrayList<Novel>();
+	static ArrayList<Novel> novelInventory;
 	static Book bookInventoryObject;	
+	
 	
 	public Novel(){
 	}
+	
+	
 	
 	public Novel(String bookName,String novelType, int pageNumbers){
 		//super(bookName, pageNumbers);
@@ -26,7 +29,7 @@ public class Novel extends Book{
 		return novelType;
 	}
 	public static void  addNovel(){
-	
+	novelInventory = new ArrayList<Novel>();
 		System.out.println("enter novel title:");
 		bookName = novelInput.nextLine();
 		System.out.println("enter novel type (mistery, sci fi, etc.:");

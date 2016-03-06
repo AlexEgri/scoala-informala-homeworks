@@ -4,7 +4,7 @@ public class ArtAlbum extends Book{
 	static Scanner inputAlbum = new Scanner(System.in);
 	private static String paperQuality;
 	static Book bookInventoryObject;
-	static ArrayList<ArtAlbum> albumInventory = new ArrayList<ArtAlbum>();
+	static ArrayList<ArtAlbum> albumInventory;
 	
 	
 	public ArtAlbum(){
@@ -25,7 +25,7 @@ public class ArtAlbum extends Book{
 	}
 	
 	public static void  addAlbum(){
-		
+		albumInventory = new ArrayList<ArtAlbum>();
 		System.out.println("enter album title:");
 		bookName = inputAlbum.nextLine();
 		System.out.println("enter album number of pages:");
@@ -33,6 +33,7 @@ public class ArtAlbum extends Book{
 		System.out.println("enter album quality of paper:");
 		paperQuality = inputAlbum.nextLine();
 		ArtAlbum album = new ArtAlbum(bookName,paperQuality,pageNumbers);
+		albumInventory.add(album);
 	}
 	
 	public static void listAlbum(){
