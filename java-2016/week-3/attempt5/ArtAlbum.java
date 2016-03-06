@@ -30,15 +30,5 @@ public class ArtAlbum extends Book{
 		paperQuality = inputAlbum.nextLine();
 	}
 	
-/* 	public static void addAlbum(){
-		ArtAlbum artAlbum = new ArtAlbum();
-		System.out.println("enter album title");
-		artAlbum.newBookName = inputAlbum.nextLine();
-		
-		
-		System.out.println("enter album number of pages");
-		pageNumbers = inputAlbum.nextLine();
-		System.out.println("enter album paper quality");
-		paperQuality = inputAlbum.nextLine();
-	} */
+
 }

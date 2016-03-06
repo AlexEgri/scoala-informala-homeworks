@@ -32,17 +32,6 @@ public class Novel extends Book{
 
 		
 	}
-	//am incercat sa imi fac aici metodele prin care sa se adauge obiectele de tip novel
-	//insa ma lovesc de probleme de genul chestii statice folosite unde nu tb sau chestii private ce nu pot fi accesate 
-	/* public static void addNovel(){
-		Book book = new Book(bookName, pageNumbers, novelType);
-		System.out.println("please enter novel title: ");
-		book.retrieveBookName() = novelInput.nextLine();
-		System.out.println("please enter number of pages: ");
-		pageNumbers = novelInput.nextInt();
-		System.out.println("please enter type of Novel (sci fi, mistery, romance, etc. : ");
-		novelType = novelInput.nextLine();
-		cucu = new Novel(bookName, pageNumbers, novelType);
-	} */
+	
 	
 }

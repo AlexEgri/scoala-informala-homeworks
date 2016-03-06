@@ -16,26 +16,7 @@ public class Library {
 	switch(choice){
 		case "1":
 		Book.addBook();
-		// din clasa Book, userul va avea de ales daca vrea sa adauge roman sau album
-	 	/* System.out.println("What type of book?");
-		System.out.println("For a novel press N");
-		System.out.println("For an art album  press A");
-		String bookTypeChosen = input.nextLine();
-		
-		switch(bookTypeChosen){
-			case "A":
-			System.out.println("album added");
-			return;
-		
-			case "N":
-			Novel.addNovel();	
-			// daca as sti cum sa fac asta ar fi minunat
-			//din ce am recitit in curs, metoda ar trebui declarata in cadrul clasei Novel, iar aici as folosi metoda pentru a crea un nou obiect al carui continut il va introduce userul
-			System.out.println("novel added");
-			return; 
-			default:
-			System.out.println("invalid book type chosen");
-		} */
+	
 	
 		case "2":
 		System.out.println("Removing book");

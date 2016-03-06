@@ -56,47 +56,5 @@ public Book(String bookName, int numberOfPages){
 			} 
 		
 	}	
-	/* 
-	public static void  addBook(){
-		Book carticica = new Book();
-		System.out.println("choose type of book");
-		/* bookTypeChosen = userInputBook.nextLine();
-			switch(bookTypeChosen){
-			case "novel":
-			//addNovel();
-			return;
-			case "album":
-			//addAlbum();
-			return;
-			default:
-			System.out.println("alege novel sau album  !!!");
-			} 
-			System.out.println("enter novel name");
-			bookName = userInputBook.nextLine();
-			
-			System.out.println(bookName);
-		}
-	 */
-	//public static void main(String[] args){
-		//addBook();
-		
-		
 	
-	/* public String addBook(){
-		Scanner bookTypeChoice = new Scanner(System.in);
-		System.out.println("please choose the type of book you want to add");
-		System.out.println("enter N for novel");
-		System.out.println("enter A for Art Album");
-		chosenBookType = bookTypeChoice.nextLine();
-		if (chosenBookType == "N"){
-			Novel novel = new Novel();
-			novel.addNovel();
-		}
-		else{
-			if (chosenBookType == "A"){
-				ArtAlbum artAlbum = new ArtAlbum();
-				artAlbum.addAlbum();
-			}
-		}
-	} */
 }
