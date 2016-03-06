@@ -6,14 +6,6 @@ public class Library {
 	private int inventoryCount = 0;
 
 	
-	
-
-
-
-
-
-	
-	
 	public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
 	System.out.println("Hello what would you want to do?");
@@ -27,6 +19,7 @@ public class Library {
 		System.out.println("For a novel press N");
 		System.out.println("For an art album  press A");
 		String bookChoice = input.nextLine();
+		
 		switch(bookChoice){
 			case "A":
 			System.out.println("album added");
@@ -36,22 +29,13 @@ public class Library {
 			System.out.println("novel added");
 			return;
 		}
-		/* if (bookChoice == "A"){
-			//addAlbum();
-				System.out.println("album added!");
-				return;
-		}
-		else if (bookChoice == "N"){
-			//addNovel();
-				System.out.println("novel added!");
-			return;
-		} */
-		
+	
 		case "2":
 		System.out.println("Removing book");
 		//removeBook();
 			System.out.println("book removed!");
 		return;
+	
 		case "3":
 		System.out.println("listing books");
 		return;
