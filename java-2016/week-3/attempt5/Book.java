@@ -6,6 +6,9 @@ public class Book{
 public static String bookName;
 public static int pageNumbers;
 private static String bookTypeChosen;
+
+
+
 static Scanner userInputBook = new Scanner(System.in);
 
 //constructor default al clasei - nu am inteles pana la capat de ce se foloseste
@@ -28,13 +31,13 @@ public Book(String bookName, int numberOfPages){
 		pageNumbers = newPageNumbers;
 	}
 
-	public String retrieveBookName(){
+	public String getBookName(){
 		System.out.println("asta e tuitlul ");
 		return bookName;
 	}
 
 
-	public int retrieveNumberOfPages(){
+	public int getNumberOfPages(){
 		System.out.println("asta e numaru de pagini");
 		return pageNumbers;
 	}
@@ -47,9 +50,14 @@ public Book(String bookName, int numberOfPages){
 			switch(bookTypeChosen){
 			case "novel":
 			Novel.addNovel();
+			//da un numar de inventar obiectului
+			//adauga obiectul in array
+			
 			return;
 			case "album":
 			ArtAlbum.addAlbum();
+			//da un numar de inventar obiectului
+			//adauga obiectul in array
 			return;
 			default:
 			System.out.println("alege novel sau album  !!!");
@@ -57,4 +65,16 @@ public Book(String bookName, int numberOfPages){
 		
 	}	
 	
+	public static void listBook(){
+		Novel.listNovel();
+		ArtAlbum.listAlbum();
+	}
+	
+	/* public static void removeBook(){
+		System.out.println("Enter id of book to be removed");
+		bookRemover = userInputBook.nextInt();
+		//ia numarul de inventar al obiectului
+		//asociaza-l cu indexul din array la care e alocat
+		//sterge din array obiectul
+	} */
 }
