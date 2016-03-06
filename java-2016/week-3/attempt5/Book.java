@@ -1,14 +1,19 @@
-public class Book{
-private String bookName;
-private int pageNumbers;
+import java.util.*;
 
+public class Book{
+
+
+public static String bookName;
+public static int pageNumbers;
+private static String bookTypeChosen;
+static Scanner userInputBook = new Scanner(System.in);
 
 //constructor default al clasei - nu am inteles pana la capat de ce se foloseste
 public Book(){
 	}
 //constructor cu parametri ai clasei, nu pricep de ce as avea nevoie de doi constructori
-public Book(String title, int numberOfPages){
-	this.bookName = title;
+public Book(String bookName, int numberOfPages){
+	this.bookName = bookName;
 	this.pageNumbers = numberOfPages;
 	}
 	
@@ -23,8 +28,8 @@ public Book(String title, int numberOfPages){
 		pageNumbers = newPageNumbers;
 	}
 
-	public String retrieveBook(){
-		System.out.println("asta e cartea");
+	public String retrieveBookName(){
+		System.out.println("asta e tuitlul ");
 		return bookName;
 	}
 
@@ -33,4 +38,65 @@ public Book(String title, int numberOfPages){
 		System.out.println("asta e numaru de pagini");
 		return pageNumbers;
 	}
+	
+	
+	public static void addBook(){
+		System.out.println("choose novel or album");
+		bookTypeChosen = userInputBook.nextLine();
+		
+			switch(bookTypeChosen){
+			case "novel":
+			Novel.addNovel();
+			return;
+			case "album":
+			ArtAlbum.addAlbum();
+			return;
+			default:
+			System.out.println("alege novel sau album  !!!");
+			} 
+		
+	}	
+	/* 
+	public static void  addBook(){
+		Book carticica = new Book();
+		System.out.println("choose type of book");
+		/* bookTypeChosen = userInputBook.nextLine();
+			switch(bookTypeChosen){
+			case "novel":
+			//addNovel();
+			return;
+			case "album":
+			//addAlbum();
+			return;
+			default:
+			System.out.println("alege novel sau album  !!!");
+			} 
+			System.out.println("enter novel name");
+			bookName = userInputBook.nextLine();
+			
+			System.out.println(bookName);
+		}
+	 */
+	//public static void main(String[] args){
+		//addBook();
+		
+		
+	
+	/* public String addBook(){
+		Scanner bookTypeChoice = new Scanner(System.in);
+		System.out.println("please choose the type of book you want to add");
+		System.out.println("enter N for novel");
+		System.out.println("enter A for Art Album");
+		chosenBookType = bookTypeChoice.nextLine();
+		if (chosenBookType == "N"){
+			Novel novel = new Novel();
+			novel.addNovel();
+		}
+		else{
+			if (chosenBookType == "A"){
+				ArtAlbum artAlbum = new ArtAlbum();
+				artAlbum.addAlbum();
+			}
+		}
+	} */
 }
