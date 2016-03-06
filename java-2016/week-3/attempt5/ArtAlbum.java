@@ -1,6 +1,7 @@
 public class ArtAlbum extends Book{
 	private String paperQuality;
-	
+	public ArtAlbum(){
+	}
 	public ArtAlbum(String bookName, int pageNumbers){
 		super(bookName, pageNumbers);
 		this.paperQuality = paperQuality;

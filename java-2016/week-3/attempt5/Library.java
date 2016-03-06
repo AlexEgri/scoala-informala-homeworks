@@ -2,9 +2,8 @@ import java.util.*;
 
 public class Library {
 	
-	private Book [] inventory = new Book[100];
-	private int inventoryCount = 0;
-
+	
+	
 	
 	public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
@@ -26,6 +25,9 @@ public class Library {
 			return;
 		
 			case "N":
+			//Novel.addNovel();
+				
+	
 			System.out.println("novel added");
 			return;
 		}

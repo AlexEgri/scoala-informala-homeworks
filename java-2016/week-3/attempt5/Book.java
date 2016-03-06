@@ -1,6 +1,9 @@
 public class Book{
-private String bookName;
-private int pageNumbers;
+public String bookName;
+public int pageNumbers;
+
+public Book(){
+	}
 
 public Book(String title, int numberOfPages){
 	this.bookName = title;
