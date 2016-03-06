@@ -1,11 +1,9 @@
 import java.util.*;
 
 public class Library {
-	
-	
-	
-	
+		
 	public static void main(String[] args) {
+	//interoghez userul asupra actiunii dorite din cele disponibile
 	Scanner input = new Scanner(System.in);
 	System.out.println("Hello what would you want to do?");
 	System.out.println("Add a book? Press (1)");
@@ -26,6 +24,7 @@ public class Library {
 		
 			case "N":
 			//Novel.addNovel();
+			// daca as sti cum sa fac asta ar fi minunat
 				
 	
 			System.out.println("novel added");
@@ -35,12 +34,16 @@ public class Library {
 		case "2":
 		System.out.println("Removing book");
 		//removeBook();
-			System.out.println("book removed!");
+		
 		return;
 	
 		case "3":
 		System.out.println("listing books");
+		//listBooks();
 		return;
+		
+		default: 
+		System.out.println("invalid choice");
 	}
 	
 	
