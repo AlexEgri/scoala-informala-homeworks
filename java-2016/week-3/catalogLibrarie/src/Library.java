@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Library {
 
-		private ArrayList inventoryBooks = new ArrayList();
+		ArrayList inventoryBooks = new ArrayList();
 		private int idBooks = 0;
 	
 		public void userChoice (){
