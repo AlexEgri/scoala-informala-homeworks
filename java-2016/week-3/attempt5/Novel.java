@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
+// CODE REVIEW - andrei.hegedus - You should try formatting and indenting your code because it is hard to read.
 public class Novel extends Book{
 	//extind clasa Book cu Novel si creez variabila care e in plus fata de ce exista deja in Book
 	private static String novelType;
