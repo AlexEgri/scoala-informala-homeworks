@@ -6,14 +6,14 @@ public class Car implements Vehicle {
 	private int fuelTankSize;
 	private String fuelType;
 	private int numberOfGears;
-	private float averageFuelConsumption;
+	protected float averageFuelConsumption;
 	private int currentFuelAmount;
-	private float availableFuel;
-	private int selectedGear=1;
+	protected float availableFuel;
+	private int selectedGear = 1;
 	private int burnedFuelQuantity;
 	private int burnedFuelModifier;
-	private double totalDistanceDriven;
-	private int totalFuelConsumed;
+	protected double totalDistanceDriven;
+	protected int totalFuelConsumed;
 	private double distanceDriven;
 
 	public Car(String chasseNumber, int currentFuelAmount) {
@@ -23,6 +23,11 @@ public class Car implements Vehicle {
 
 	public Car(float averageFuelConsumption) {
 		this.averageFuelConsumption = averageFuelConsumption;
+	}
+
+	public Car(float availableFuel, float averageFuelConsumption) {
+		this.availableFuel = availableFuel;
+		this.averageFuelConsumption = availableFuel;
 	}
 
 	public void shiftGear(int selectedGear) {

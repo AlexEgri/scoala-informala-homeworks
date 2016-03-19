@@ -8,6 +8,11 @@ public class Logan extends Dacia {
 		super(chasseNumber, currentFuelAmmount);
 
 	}
+	
+	public Logan(int currentFuelAmmount,String chasseNumber) {
+		super(chasseNumber, currentFuelAmmount);
+
+	}
 
 	public Logan(String chasseNumber, int currentFuelAmmount, int musicStorageCapacity) {
 		super(chasseNumber, currentFuelAmmount);
