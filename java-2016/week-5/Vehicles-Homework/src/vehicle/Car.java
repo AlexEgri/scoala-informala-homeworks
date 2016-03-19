@@ -1,50 +1,59 @@
 package vehicle;
 
-public abstract class Car implements Vehicle {
+public class Car implements Vehicle {
 
 	private String chasseNumber;
 	private int fuelTankSize;
-	protected String fuelType;
-	protected int numberOfGears;
-	private int selectedGear;
-	private float initalFuelAmount;
+	private String fuelType;
+	private int numberOfGears;
 	private float averageFuelConsumption;
+	private int currentFuelAmount;
 	private float availableFuel;
-	private float currentFuelConsumption;
-	private double kilometers;
-	private float kilometersDriven;
-	private float currentFuelAmmount;
+	private int selectedGear;
+	private int burnedFuelQuantity;
+	private int burnedFuelModifier;
 
-	public Car() {
-
-	}
-
-	public Car(float currentFuelAmount, String chasseNumber) {
-
-	}
-
-	public void stop() {
-		System.out.println("You consumed " + (getInitalFuelAmount() - getCurrentFuelAmmount()));
-		System.out.println("This is your fuel level: " + getAvailableFuel());
-	}
-
-	public void start() {
-		System.out.println("car has started!" + " You have " + getCurrentFuelAmmount() + " fuel!");
-	}
-
-	public void drive(double kilometers) {
-		this.kilometers = kilometers;
-		System.out.println("You are driving for " + getKilometers());
-
+	public Car(String chasseNumber, int currentFuelAmount) {
+		this.chasseNumber = chasseNumber;
+		this.currentFuelAmount = currentFuelAmount;
 	}
 
 	public void shiftGear(int selectedGear) {
-		this.selectedGear = selectedGear;
+		this.setSelectedGear(selectedGear);
 		System.out.println("Changed in gear :" + selectedGear);
 	}
 
-	public float calculateAverageFuelConsumption() {
-		return averageFuelConsumption = (float) (100 * (initalFuelAmount - currentFuelAmmount) / kilometers);
+	public void burnFuel() {
+		burnedFuelModifier = currentFuelAmount - selectedGear;
+		burnedFuelQuantity = currentFuelAmount - burnedFuelModifier;
+		System.out.println("burned this much fuel: " + burnedFuelQuantity);
+		this.currentFuelAmount = currentFuelAmount -burnedFuelQuantity;
+
+	}
+
+	@Override
+	public void start() {
+		getAvailableFuel();
+		getCurrentFuelAmount();
+		System.out.println("this is the beggining fuel amount " + currentFuelAmount);
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("currentfuel at stop" + currentFuelAmount);
+		setAvailableFuel(currentFuelAmount);
+		System.out.println("availablefuel at stop" + availableFuel);
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void drive(double kilometers) {
+		burnFuel();
+		// TODO Auto-generated method stub
+
 	}
 
 	public String getChasseNumber() {
@@ -59,7 +68,7 @@ public abstract class Car implements Vehicle {
 		return fuelTankSize;
 	}
 
-	public void setFuelTankCapacity(int fuelTankSize) {
+	public void setFuelTankSize(int fuelTankSize) {
 		this.fuelTankSize = fuelTankSize;
 	}
 
@@ -79,20 +88,20 @@ public abstract class Car implements Vehicle {
 		this.numberOfGears = numberOfGears;
 	}
 
-	public float getInitalFuelAmount() {
-		return initalFuelAmount;
-	}
-
-	public void setInitalFuelAmount(float initalFuelAmount) {
-		this.initalFuelAmount = initalFuelAmount;
-	}
-
 	public float getAverageFuelConsumption() {
 		return averageFuelConsumption;
 	}
 
 	public void setAverageFuelConsumption(float averageFuelConsumption) {
-		this.averageFuelConsumption = availableFuel / kilometersDriven;
+		this.averageFuelConsumption = averageFuelConsumption;
+	}
+
+	public int getCurrentFuelAmount() {
+		return currentFuelAmount;
+	}
+
+	public void setCurrentFuelAmount(int currentFuelAmount) {
+		this.currentFuelAmount = currentFuelAmount;
 	}
 
 	public float getAvailableFuel() {
@@ -103,14 +112,6 @@ public abstract class Car implements Vehicle {
 		this.availableFuel = availableFuel;
 	}
 
-	public float getCurrentFuelConsumption() {
-		return currentFuelConsumption;
-	}
-
-	public void setCurrentFuelConsumption(float currentFuelConsumption) {
-		this.currentFuelConsumption = currentFuelConsumption;
-	}
-
 	public int getSelectedGear() {
 		return selectedGear;
 	}
@@ -119,20 +120,12 @@ public abstract class Car implements Vehicle {
 		this.selectedGear = selectedGear;
 	}
 
-	public double getKilometers() {
-		return kilometers;
+	public int getBurnedFuelQuantity() {
+		return burnedFuelQuantity;
 	}
 
-	public void setKilometers(double kilometers) {
-		this.kilometers = kilometers;
-	}
-
-	public float getCurrentFuelAmmount() {
-		return currentFuelAmmount;
-	}
-
-	public void setCurrentFuelAmmount(float currentFuelAmmount) {
-		this.currentFuelAmmount = currentFuelAmmount;
+	public void setBurnedFuelQuantity(int burnedFuelQuantity) {
+		this.burnedFuelQuantity = burnedFuelQuantity;
 	}
 
 }
