@@ -2,22 +2,24 @@ package vehicle;
 
 public class Logan extends Dacia {
 
-	private int musicStoragecapacity;
+	private int musicStorageCapacity;
 
-	public Logan(String chasseNumber,int currentFuelAmmount ) {
-		super(chasseNumber, currentFuelAmmount );
+	public Logan(String chasseNumber, int currentFuelAmmount) {
+		super(chasseNumber, currentFuelAmmount);
+
 	}
 
-	public Logan(float averageFuelConsumption){
-		super(averageFuelConsumption);
+	public Logan(String chasseNumber, int currentFuelAmmount, int musicStorageCapacity) {
+		super(chasseNumber, currentFuelAmmount);
+		this.musicStorageCapacity = musicStorageCapacity;
 	}
 
 	public int getMusicStoragecapacity() {
-		return musicStoragecapacity;
+		return musicStorageCapacity;
 	}
 
 	public void setMusicStoragecapacity(int musicStoragecapacity) {
-		this.musicStoragecapacity = musicStoragecapacity;
+		this.musicStorageCapacity = musicStoragecapacity;
 	}
 
 }

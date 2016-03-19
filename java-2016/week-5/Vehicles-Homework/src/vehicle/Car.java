@@ -9,7 +9,7 @@ public class Car implements Vehicle {
 	private float averageFuelConsumption;
 	private int currentFuelAmount;
 	private float availableFuel;
-	private int selectedGear;
+	private int selectedGear=1;
 	private int burnedFuelQuantity;
 	private int burnedFuelModifier;
 	private double totalDistanceDriven;
@@ -20,9 +20,8 @@ public class Car implements Vehicle {
 		this.chasseNumber = chasseNumber;
 		this.currentFuelAmount = currentFuelAmount;
 	}
-	
-	
-	public Car(float averageFuelConsumption){
+
+	public Car(float averageFuelConsumption) {
 		this.averageFuelConsumption = averageFuelConsumption;
 	}
 
@@ -35,23 +34,23 @@ public class Car implements Vehicle {
 		burnedFuelModifier = currentFuelAmount - selectedGear;
 		burnedFuelQuantity = currentFuelAmount - burnedFuelModifier;
 		System.out.println("burned this much fuel: " + burnedFuelQuantity);
-		this.currentFuelAmount = currentFuelAmount -burnedFuelQuantity;
+		this.currentFuelAmount = currentFuelAmount - burnedFuelQuantity;
 		System.out.println("current fuel " + currentFuelAmount);
 
 	}
-	
-	public void calculateSumOfDrivenDistance(){
+
+	public void calculateSumOfDrivenDistance() {
 		this.totalDistanceDriven = totalDistanceDriven + distanceDriven;
 		System.out.println("total distance driven is " + totalDistanceDriven);
-		
+
 	}
-	
-	public void calculateSumOfBurnedFuel(){
+
+	public void calculateSumOfBurnedFuel() {
 		this.totalFuelConsumed = burnedFuelQuantity + totalFuelConsumed;
 		System.out.println("totalFuelConsumed is" + totalFuelConsumed);
 	}
-	
-	public void calculateAverageFuelConsumption(){
+
+	public void calculateAverageFuelConsumption() {
 		this.averageFuelConsumption = (float) (totalDistanceDriven / totalFuelConsumed);
 	}
 
@@ -68,7 +67,6 @@ public class Car implements Vehicle {
 	public void stop() {
 		System.out.println("currentfuel at stop" + currentFuelAmount);
 		setAvailableFuel(currentFuelAmount);
-		System.out.println("availablefuel at stop" + availableFuel);
 		getAverageFuelConsumption();
 		System.out.println("AverageFuelConsumption is " + averageFuelConsumption);
 		// TODO Auto-generated method stub
@@ -138,7 +136,7 @@ public class Car implements Vehicle {
 	}
 
 	public void setAvailableFuel(float availableFuel) {
-		this.availableFuel = availableFuel;
+		this.availableFuel = currentFuelAmount;
 	}
 
 	public int getSelectedGear() {
