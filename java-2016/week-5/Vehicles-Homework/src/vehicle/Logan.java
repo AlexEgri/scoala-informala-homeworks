@@ -6,11 +6,11 @@ public class Logan extends Dacia {
 
 	public Logan(String chasseNumber,int currentFuelAmmount ) {
 		super(chasseNumber, currentFuelAmmount );
-	//	setCurrentFuelAmmount(currentFuelAmmount);
-		//setChasseNumber(chasseNumber);
 	}
 
-	
+	public Logan(float averageFuelConsumption){
+		super(averageFuelConsumption);
+	}
 
 	public int getMusicStoragecapacity() {
 		return musicStoragecapacity;

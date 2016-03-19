@@ -8,4 +8,7 @@ public abstract class Dacia extends Car {
 		super(chasseNumber , currentFuelAmount );
 	}
 
+	public Dacia(float averageFuelConsumption){
+		super(averageFuelConsumption);
+	}
 }

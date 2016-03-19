@@ -12,10 +12,18 @@ public class Car implements Vehicle {
 	private int selectedGear;
 	private int burnedFuelQuantity;
 	private int burnedFuelModifier;
+	private double totalDistanceDriven;
+	private int totalFuelConsumed;
+	private double distanceDriven;
 
 	public Car(String chasseNumber, int currentFuelAmount) {
 		this.chasseNumber = chasseNumber;
 		this.currentFuelAmount = currentFuelAmount;
+	}
+	
+	
+	public Car(float averageFuelConsumption){
+		this.averageFuelConsumption = averageFuelConsumption;
 	}
 
 	public void shiftGear(int selectedGear) {
@@ -28,7 +36,23 @@ public class Car implements Vehicle {
 		burnedFuelQuantity = currentFuelAmount - burnedFuelModifier;
 		System.out.println("burned this much fuel: " + burnedFuelQuantity);
 		this.currentFuelAmount = currentFuelAmount -burnedFuelQuantity;
+		System.out.println("current fuel " + currentFuelAmount);
 
+	}
+	
+	public void calculateSumOfDrivenDistance(){
+		this.totalDistanceDriven = totalDistanceDriven + distanceDriven;
+		System.out.println("total distance driven is " + totalDistanceDriven);
+		
+	}
+	
+	public void calculateSumOfBurnedFuel(){
+		this.totalFuelConsumed = burnedFuelQuantity + totalFuelConsumed;
+		System.out.println("totalFuelConsumed is" + totalFuelConsumed);
+	}
+	
+	public void calculateAverageFuelConsumption(){
+		this.averageFuelConsumption = (float) (totalDistanceDriven / totalFuelConsumed);
 	}
 
 	@Override
@@ -45,15 +69,20 @@ public class Car implements Vehicle {
 		System.out.println("currentfuel at stop" + currentFuelAmount);
 		setAvailableFuel(currentFuelAmount);
 		System.out.println("availablefuel at stop" + availableFuel);
+		getAverageFuelConsumption();
+		System.out.println("AverageFuelConsumption is " + averageFuelConsumption);
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void drive(double kilometers) {
+	public void drive(double distanceDriven) {
+		this.distanceDriven = distanceDriven;
 		burnFuel();
-		// TODO Auto-generated method stub
-
+		calculateSumOfDrivenDistance();
+		calculateSumOfBurnedFuel();
+		calculateAverageFuelConsumption();
+		getAverageFuelConsumption();
 	}
 
 	public String getChasseNumber() {
@@ -93,7 +122,7 @@ public class Car implements Vehicle {
 	}
 
 	public void setAverageFuelConsumption(float averageFuelConsumption) {
-		this.averageFuelConsumption = averageFuelConsumption;
+		this.averageFuelConsumption = (float) (totalDistanceDriven / totalFuelConsumed);
 	}
 
 	public int getCurrentFuelAmount() {
