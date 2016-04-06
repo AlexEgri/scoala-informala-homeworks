@@ -1,5 +1,6 @@
 package vehicle;
 
+// TODO CODE REVIEW: Car was supposed to be abstract.
 public class Car implements Vehicle {
 
 	private String chasseNumber;
@@ -16,25 +17,30 @@ public class Car implements Vehicle {
 	protected int totalFuelConsumed;
 	private double distanceDriven;
 
+	// TODO CODE REVIEW: You don't need so many constructors for this homework - Also you din't use constructor-chaining. You risk creating objects that are not constructed correctly.
 	public Car(String chasseNumber, int currentFuelAmount) {
 		this.chasseNumber = chasseNumber;
 		this.currentFuelAmount = currentFuelAmount;
 	}
 
 	public Car(float averageFuelConsumption) {
+		// TODO CODE REVIEW: This type of car does not have a chasseNumber when created!
 		this.averageFuelConsumption = averageFuelConsumption;
 	}
 
 	public Car(float availableFuel, float averageFuelConsumption) {
+		// TODO CODE REVIEW: This type of car does not have a chasseNumber when created!
 		this.availableFuel = availableFuel;
 		this.averageFuelConsumption = availableFuel;
 	}
 
 	public void shiftGear(int selectedGear) {
+		// TODO CODE REVIEW: the setSelectedGear method has no purpose. Does it bring any added value? It is called by shiftGear and it is public at the same time. I don't see the reason to have it.
 		this.setSelectedGear(selectedGear);
 		System.out.println("Changed in gear :" + selectedGear);
 	}
 
+	// TODO CODE REVIEW: Why is this method public? Do you as a driver burn the fuel of a car?
 	public void burnFuel() {
 		burnedFuelModifier = currentFuelAmount - selectedGear;
 		burnedFuelQuantity = currentFuelAmount - burnedFuelModifier;
@@ -44,17 +50,21 @@ public class Car implements Vehicle {
 
 	}
 
+	// TODO CODE REVIEW: Same as above. Do you tell the care to do this? No. You just read the calculated value on the car's dashboard.
+	// You should review what encapsulation means.
 	public void calculateSumOfDrivenDistance() {
 		this.totalDistanceDriven = totalDistanceDriven + distanceDriven;
 		System.out.println("total distance driven is " + totalDistanceDriven);
 
 	}
 
+	// TODO CODE REVIEW: Same as above
 	public void calculateSumOfBurnedFuel() {
 		this.totalFuelConsumed = burnedFuelQuantity + totalFuelConsumed;
 		System.out.println("totalFuelConsumed is" + totalFuelConsumed);
 	}
 
+	// TODO CODE REVIEW: Same as above
 	public void calculateAverageFuelConsumption() {
 		this.averageFuelConsumption = (float) (totalDistanceDriven / totalFuelConsumed);
 	}
@@ -64,6 +74,7 @@ public class Car implements Vehicle {
 		getAvailableFuel();
 		getCurrentFuelAmount();
 		System.out.println("this is the beggining fuel amount " + currentFuelAmount);
+		// TODO CODE REVIEW: Don't leave auto generated comments in code please.
 		// TODO Auto-generated method stub
 
 	}
