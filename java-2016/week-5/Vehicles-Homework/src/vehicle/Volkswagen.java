@@ -6,7 +6,7 @@ public abstract class Volkswagen extends Car {
 		super(chasseNumber, currentFuelAmount);
 	}
 
-	public Volkswagen(float availableFuel, float averageFuelConsumption){
-		super(availableFuel, averageFuelConsumption );
+	public Volkswagen(float availableFuel, float averageFuelConsumption, String chasseNumber) {
+		super(availableFuel, averageFuelConsumption, chasseNumber);
 	}
 }

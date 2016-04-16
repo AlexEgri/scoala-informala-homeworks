@@ -72,7 +72,7 @@ public class Test {
 		// code yet unclear if it should run along with the rest above
 		// float availableFuel = car2.getAvailableFuel();
 
-		 //float fuleConsumedPer100Km = car2.getAverageFuelConsumption();
+		// float fuleConsumedPer100Km = car2.getAverageFuelConsumption();
 
 	}
 
