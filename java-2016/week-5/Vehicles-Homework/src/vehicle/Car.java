@@ -16,6 +16,7 @@ public abstract class Car implements Vehicle {
 	protected double totalDistanceDriven;
 	protected int totalFuelConsumed;
 	private double distanceDriven;
+	private int carAge;
 
 	public Car() {
 
@@ -170,6 +171,14 @@ public abstract class Car implements Vehicle {
 
 	public void setBurnedFuelQuantity(int burnedFuelQuantity) {
 		this.burnedFuelQuantity = burnedFuelQuantity;
+	}
+
+	public int getCarAge() {
+		return carAge;
+	}
+
+	public void setCarAge(int carAge) {
+		this.carAge = carAge;
 	}
 
 }
