@@ -30,4 +30,10 @@ public class Booking {
 		this.bookingPeriod = bookingPeriod;
 	}
 
+	@Override
+	public String toString() {
+		return "Booking [room=" + room + ", bookingPeriod=" + bookingPeriod + ", getRoom()=" + getRoom()
+				+ ", getBookingPeriod()=" + getBookingPeriod() + "]";
+	}
+
 }

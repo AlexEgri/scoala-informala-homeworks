@@ -21,4 +21,9 @@ public class BookingPeriod {
 		return to;
 	}
 
+	@Override
+	public String toString() {
+		return "BookingPeriod [from=" + from + ", to=" + to + "]";
+	}
+
 }

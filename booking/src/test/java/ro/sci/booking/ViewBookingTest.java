@@ -1,22 +1,17 @@
 package ro.sci.booking;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Test class for availability check.
- * 
- * @author alex
- *
- */
-public class TestAvailability {
+public class ViewBookingTest {
 
 	List<Accommodation> rooms;
 
@@ -25,7 +20,8 @@ public class TestAvailability {
 	List<Booking> bookings;
 
 	@Before
-	public void init() {
+	public void setUp() throws Exception {
+
 		rooms = new ArrayList<Accommodation>();
 
 		Date from = getDate(2016, 5, 1);
@@ -46,14 +42,51 @@ public class TestAvailability {
 		bookings = new ArrayList<Booking>();
 
 		bookings.add(new Booking(room1, periods.get(0)));
+		bookings.add(new Booking(room1, periods.get(1)));
+		bookings.add(new Booking(room1, periods.get(2)));
+		bookings.add(new Booking(room1, periods.get(3)));
+
+		bookings.get(0).getRoom().setBedType(BedType.KING_SIZE);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		rooms = null;
+		bookings = null;
+		periods = null;
 	}
 
 	@Test
-	public void testPeriod() {
-		Date from = getDate(2016, 7, 15);
-		Date to = getDate(2016, 7, 20);
+	public void testIfBookingHasCorrectBookingPeriod() {
+		// System.out.println(bookings.get(1).getBookingPeriod().toString());
+		assertEquals(periods.get(0), bookings.get(0).getBookingPeriod());
+	}
 
-		assertFalse(findAccomodationTypeByPeriod(AccommodationType.ROYAL, from, to));
+	@Test
+	public void testIfBookingHasCorrectRoom() {
+		assertEquals(rooms.get(0), bookings.get(0).getRoom());
+	}
+
+	@Test
+	public void testIfFirstBookingHasCorrectFromDate() {
+		// preparing some dates and booking periods to compare them if they are
+		// added correctly
+
+		Date from = getDate(2016, 5, 12);
+		Date to = getDate(2016, 5, 17);
+		BookingPeriod testPeriod = new BookingPeriod(from, to);
+		periods.add(testPeriod);
+		addAccommodationTypeByPeriod(AccommodationType.DOUBLE, from, to);
+		// because testing the dates themselves directly sometimes provides
+		// inconsistent results, they are converted into strings before being
+		// tested against each other
+		assertEquals(from.toString(), bookings.get(0).getBookingPeriod().getFrom().toString());
+	}
+
+	@Test
+	public void testIfFirstBookedRoomHasCorrectBedType() {
+		BedType testBedType = BedType.KING_SIZE;
+		assertTrue(testBedType == bookings.get(0).getRoom().getBedType());
 	}
 
 	private void addAccommodationTypeByPeriod(AccommodationType type, Date from, Date to) {
@@ -94,6 +127,23 @@ public class TestAvailability {
 		return found;
 	}
 
+	private Date getDate(int year, int month, int day) {
+		Calendar c = Calendar.getInstance();
+		c.set(Calendar.YEAR, year);
+		c.set(Calendar.MONTH, month);
+		c.set(Calendar.DAY_OF_MONTH, day);
+
+		return c.getTime();
+	}
+
+	private Season createSeason(SeasonType type, Date from, Date to) {
+		Season season = new Season();
+		season.setFrom(from);
+		season.setTo(to);
+		season.setType(type);
+		return season;
+	}
+
 	private Accommodation createNewRoom(AccommodationType type, RoomFair fair) {
 		Accommodation accomodation = new Accommodation();
 		accomodation.setType(type);
@@ -106,23 +156,6 @@ public class TestAvailability {
 		roomFair.setSeason(season);
 		roomFair.setValue(i);
 		return roomFair;
+
 	}
-
-	private Season createSeason(SeasonType type, Date from, Date to) {
-		Season season = new Season();
-		season.setFrom(from);
-		season.setTo(to);
-		season.setType(type);
-		return season;
-	}
-
-	private Date getDate(int year, int month, int day) {
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.YEAR, year);
-		c.set(Calendar.MONTH, month);
-		c.set(Calendar.DAY_OF_MONTH, day);
-
-		return c.getTime();
-	}
-
 }
